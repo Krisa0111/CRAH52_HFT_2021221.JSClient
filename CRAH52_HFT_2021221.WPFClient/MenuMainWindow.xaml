@@ -1,0 +1,20 @@
+﻿<Window x:Class="CRAH52_HFT_2021221.WPFClient.MenuMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRAH52_HFT_2021221.WPFClient"
+        mc:Ignorable="d"
+        Title="MenuMainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Clubs CRUD" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" FontFamily="Arial Black"/>
+        <Button Content="Clubs Menu" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Arial Black" Padding="10" Click="Button_Click"/>
+        <Button Content="Events Menu" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Arial Black" Padding="10" Click="Button_Click_1"/>
+        <Button Content="Guests Menu" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Arial Black" Padding="10" Click="Button_Click_2"/>
+    </Grid>
+</Window>

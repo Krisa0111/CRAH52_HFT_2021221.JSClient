@@ -1,0 +1,43 @@
+﻿<Window x:Class="CRAH52_HFT_2021221.WPFClient.EventMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRAH52_HFT_2021221.WPFClient"
+        mc:Ignorable="d"
+        Title="EventMainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:EventMainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsSource="{Binding Events}" SelectedItem="{Binding SelectedEvent}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding EventName}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <Label Content="Event Name" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedEvent.EventName}" Padding="10"/>
+            <Label Content="Event id" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedEvent.EventID}" Padding="10"/>
+            <Label Content="Event date" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedEvent.Date}" Padding="10"/>
+            <Label Content="Event short description" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedEvent.EventShortDesc}" Padding="10"/>
+            <Label Content="Club id" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedEvent.ClubID}" Padding="10"/>
+            <Label Content="List of Guests" Background="LightBlue" Padding="10"/>
+            <ListView ItemsSource="{Binding SelectedEventGuests}" Padding="10"/>
+            <Button Content="Create Event" Command="{Binding CreateEventCommand}" Margin="10" Padding="10"/>
+            <Button Content="Delete Event" Command="{Binding DeleteEventCommand}" Margin="10" Padding="10"/>
+            <Button Content="Update Event" Command="{Binding UpdateEventCommand}" Margin="10" Padding="10"/>
+            <Button Content="Back" Click="Button_Click" Margin="20" Padding="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ConsoleMenu-simple" Version="2.4.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRAH52_HFT_2021221.Data\CRAH52_HFT_2021221.Data.csproj" />
+    <ProjectReference Include="..\CRAH52_HFT_2021221.Logic\CRAH52_HFT_2021221.Logic.csproj" />
+    <ProjectReference Include="..\CRAH52_HFT_2021221.Models\CRAH52_HFT_2021221.Models.csproj" />
+  </ItemGroup>
+
+</Project>
