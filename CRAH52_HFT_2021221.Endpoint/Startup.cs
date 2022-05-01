@@ -58,6 +58,12 @@ namespace CRAH52_HFT_2021221.Endpoint
                 app.UseExceptionHandler("/error");
             }
 
+            app.UseCors(x=>x
+            .AllowCredentials()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins("http://localhost:52871"));
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
