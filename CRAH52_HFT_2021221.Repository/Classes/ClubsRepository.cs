@@ -27,6 +27,13 @@ namespace CRAH52_HFT_2021221.Repository
             Clubs club = Context
                 .Clubs
                 .FirstOrDefault(x => x.ClubID == id);
+            if (club!= null)
+            {
+                if (club.Events != null)
+                {
+                    club.Events.ClubID = null;
+                }
+            }
             Context.Clubs.Remove(club);
             Context.SaveChanges();
         }
