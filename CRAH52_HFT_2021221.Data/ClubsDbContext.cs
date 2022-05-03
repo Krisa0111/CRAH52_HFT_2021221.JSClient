@@ -33,7 +33,8 @@ namespace CRAH52_HFT_2021221.Data
                 
                 entity.HasOne(x => x.Events)
                 .WithOne(y => y.Clubs)
-                .HasForeignKey<Events>(x => x.ClubID);
+                .HasForeignKey<Events>(x => x.ClubID)
+                .OnDelete(DeleteBehavior.Cascade);
             });
             modelBuilder.Entity<Events>().Property(eventsfk => eventsfk.ClubID).IsRequired(false);
                 
