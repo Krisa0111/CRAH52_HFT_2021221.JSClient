@@ -43,6 +43,8 @@ namespace CRAH52_HFT_2021221.Logic
 
         public void Delete(int id)
         {
+            //var clubToDelete = repo.ReadOne(id);
+            //clubToDelete.Events = null;
             repo.Delete(id);
         }
 
