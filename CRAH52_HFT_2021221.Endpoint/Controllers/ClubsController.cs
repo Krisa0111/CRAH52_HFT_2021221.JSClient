@@ -38,20 +38,20 @@ namespace CRAH52_HFT_2021221.Endpoint.Controllers
         public void Post([FromBody] Clubs club)
         {
             logic.Create(club);
-            this.hub.Clients.All.SendAsync("ClubCreated", club);
+            this.hub.Clients.All.SendAsync("ClubsCreated", club);
         }
         [HttpPut]
         public void Put([FromBody] Clubs club)
         {
             logic.Update(club);
-            this.hub.Clients.All.SendAsync("ClubUpdated", club);
+            this.hub.Clients.All.SendAsync("ClubsUpdated", club);
         }
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
             var clubToDelete=this.logic.ReadOne(id);
             logic.Delete(id);
-            this.hub.Clients.All.SendAsync("ClubDeleted", clubToDelete);
+            this.hub.Clients.All.SendAsync("ClubsDeleted", clubToDelete);
         }
     }
 }
