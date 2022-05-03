@@ -62,11 +62,13 @@ namespace CRAH52_HFT_2021221.WPFClient
             UpdateClubCommand = new RelayCommand(() =>
             {
                 Clubs.Update(SelectedClub);
+                OnPropertyChanged();
             });
 
             DeleteClubCommand = new RelayCommand(() =>
             {
                 Clubs.Delete(SelectedClub.ClubID);
+                OnPropertyChanged();
             },
             () => 
             {
